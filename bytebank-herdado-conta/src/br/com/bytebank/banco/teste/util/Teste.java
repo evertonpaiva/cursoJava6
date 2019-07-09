@@ -47,9 +47,9 @@ public class Teste {
                 System.out.println(conta);
         }
 
-        NumeroDaContaComparator comparator = new NumeroDaContaComparator();
-        TitularDaContaComparator titularComparator = new TitularDaContaComparator();
-        lista.sort(titularComparator);
+        //NumeroDaContaComparator comparator = new NumeroDaContaComparator();
+        //TitularDaContaComparator titularComparator = new TitularDaContaComparator();
+        lista.sort(new TitularDaContaComparator());
         
         System.out.println("---------");
 
@@ -73,15 +73,8 @@ class TitularDaContaComparator implements Comparator<Conta> {
 class NumeroDaContaComparator implements Comparator<Conta> {
 
     @Override
-    public int compare(Conta c1, Conta c2) {
-        if(c1.getNumero() < c2.getNumero()) {
-            return -1;
-        }
-
-        if(c1.getNumero() > c2.getNumero()) {
-            return 1;
-        }
-
-        return 0;
+    public int compare(Conta c1, Conta c2) {        
+        //return c1.getNumero() - c2.getNumero();
+    	return Integer.compare(c1.getNumero(), c2.getNumero());
     }
 }
