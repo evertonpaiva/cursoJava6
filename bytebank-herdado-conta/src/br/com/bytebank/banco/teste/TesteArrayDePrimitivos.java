@@ -1,13 +1,13 @@
 package br.com.bytebank.banco.teste;
 
-public class Teste {
+public class TesteArrayDePrimitivos {
 
 	public static void main(String[] args) {
 		
 		int[] idades = new int[5];
 		
 		for (int i = 0; i < idades.length; i++) {
-			idades[i] = 20 + (10*i);
+			idades[i] = i * i;
 		}
 		
 		for (int i = 0; i < idades.length; i++) {
